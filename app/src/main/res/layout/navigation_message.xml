@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
-        android:id="@+id/item_comment_top"
+        android:id="@+id/message_header"
         android:layout_width="match_parent"
-        android:layout_height="31dp"
+        android:layout_height="45dp"
         android:layout_marginTop="0dp"
         >
         <Button
@@ -15,7 +15,7 @@
             android:layout_marginStart="10dp"
             android:background="@drawable/ic_arrow_back_black_24dp"
             android:layout_centerVertical="true"
-            android:paddingTop="3dp"
+            android:layout_marginTop="10dp"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -23,8 +23,17 @@
             android:text="消息"
             android:textSize="20dp"
             android:textColor="@color/colorBlack"
+            android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
 
             />
     </RelativeLayout>
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/message_header"
+        android:background="@color/colorDarkGray"
+        android:layout_marginTop="0dp"
+        />
 </RelativeLayout>
