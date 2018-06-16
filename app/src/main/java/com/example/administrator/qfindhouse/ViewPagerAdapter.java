@@ -1,4 +1,4 @@
-package com.example.administrator.meetingtaste;
+package com.example.administrator.qfindhouse;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
