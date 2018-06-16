@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".FindRoomDetail" />
-        <activity android:name=".RentRoomDetail"></activity>
+        <activity android:name=".RentRoomDetail" />
+        <activity android:name=".PublishFindRoomActivity" />
+        <activity android:name=".PublishRentRoomActivity" />
+        <activity android:name=".Login" />
+        <activity android:name=".Splash"></activity>
     </application>
 
 </manifest>
