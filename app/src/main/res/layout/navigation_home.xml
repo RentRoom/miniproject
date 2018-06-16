@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        >
+
+        <Button
+            android:id="@+id/publish_room"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_shape"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhiteGray"
+            android:text="出租"
+            />
+        <Button
+            android:id="@+id/find_room"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:background="@drawable/btn_shape"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhiteGray"
+            android:text="求租"
+            />
+
+    </LinearLayout>
+    <android.support.v7.widget.SearchView
+
+        android:id="@+id/search_view"
+        android:layout_width="300dp"
+        android:layout_height="35dp"
+        android:layout_below="@id/buttons_container"
+        android:background="@drawable/search_shape"
+        android:layout_centerHorizontal="true"
+
+        >
+
+    </android.support.v7.widget.SearchView>
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorDarkGray"
+        android:layout_below="@id/search_view"
+        android:layout_marginTop="10dp"
+        />
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rent_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line"
+        android:layout_marginBottom="50dp"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+</RelativeLayout>
