@@ -5,5 +5,141 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.administrator.qfindhouse.Login">
+    <TextView
+        android:id="@+id/login_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorBlack"
+        android:textSize="30dp"
+        android:text="使用OUTLOOK进行登录"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        />
+    <LinearLayout
+        android:id="@+id/login_user_pass_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignStart="@id/login_message"
+        android:layout_below="@id/login_message"
+        android:layout_alignEnd="@id/login_message"
+        android:layout_marginTop="50dp"
+        >
+        <LinearLayout
+            android:id="@+id/user_name_container"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            >
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
+
+                <TextView
+                    android:id="@+id/user_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账号"
+                    android:textSize="22dp"
+                    android:textColor="@color/colorGray"
+
+
+                    />
+            <!--</LinearLayout>-->
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:background="@drawable/send_message_style"
+                android:textColor="@color/colorGray"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="right"
+                android:textAlignment="center"
+                android:hint="英文ID"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/user_pass_container"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:id="@+id/user_pass_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密码"
+                android:textSize="22dp"
+                android:textColor="@color/colorGray"
+                android:layout_gravity="left"
+
+                />
+            <EditText
+                android:id="@+id/user_pass"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:background="@drawable/send_message_style"
+                android:textColor="@color/colorGray"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="right"
+                android:inputType="textPassword"
+                android:hint="PIN+Token"
+                android:textAlignment="center"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/login_user_pass_container"
+        android:layout_alignStart="@id/login_user_pass_container"
+        android:layout_alignEnd="@id/login_user_pass_container"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/send_message_style"
+        android:textColor="@color/colorDarkGray"
+        android:textSize="30dp"
+        android:text="登录"
+        />
+    <TextView
+        android:id="@+id/privacy_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:text="隐私安全协议"
+        android:textColor="@color/colorWhiteGray"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        />
+    <LinearLayout
+        android:id="@+id/check_privacy_policy_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_centerHorizontal="true"
+        >
+        <CheckBox
+            android:id="@+id/is_checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我已阅读隐私安全协议"
+            android:textColor="@color/colorGray"
+            />
+    </LinearLayout>
 
 </RelativeLayout>
