@@ -27,7 +27,7 @@ import java.util.zip.Inflater;
 public class FindHouseMain extends AppCompatActivity {
 
     //首页
-    private View homeFindHouseView,homeRentHouseView;
+    private View homeFindHouseView,homeRentHouseView,navigationHomeView;
     private List<View> pageList;
     private ViewPagerAdapter viewPagerAdapter;
     private ViewPager viewPager;
@@ -75,11 +75,11 @@ public class FindHouseMain extends AppCompatActivity {
     }
     void init()
     {
-
         initFragmentManager();
         initNavigationBottom();
         initView();
-       // initViewPager();
+        showHome();
+        initViewPager();
 
         showHome();
     }
@@ -111,18 +111,20 @@ public class FindHouseMain extends AppCompatActivity {
 
     }
 
-    void initViewPager(Context curContext)
+    void initViewPager()
     {
-        inflater = getLayoutInflater().from(curContext);
+        inflater = getLayoutInflater();//.from(homeFragment.getContext());
         homeFindHouseView = inflater.inflate(R.layout.home_page_find_home,null);
         homeRentHouseView = inflater.inflate(R.layout.home_page_rent_home,null);
+        navigationHomeView=inflater.inflate(R.layout.navigation_home,null);
 
         pageList = new ArrayList<>();
         pageList.add(homeFindHouseView);
         pageList.add(homeRentHouseView);
 
         viewPagerAdapter = new ViewPagerAdapter(pageList);
-        viewPager = (ViewPager) findViewById(R.id.home_cur_pager);
+        viewPager = (ViewPager) navigationHomeView.findViewById(R.id.home_cur_pager);
+        //viewPager = (ViewPager) findViewById(R.id.home_cur_pager);
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setCurrentItem(0);
     }
@@ -131,7 +133,6 @@ public class FindHouseMain extends AppCompatActivity {
         homeTabLayout = (TabLayout) findViewById(R.id.tab_layout);
         rentHouseItem = (TabItem) findViewById(R.id.rent_tab_item);
         findHouseItem = (TabItem) findViewById(R.id.find_tab_item);
-
     }
 
     void showHome()
