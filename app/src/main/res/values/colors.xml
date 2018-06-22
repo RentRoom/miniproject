@@ -9,4 +9,6 @@
     <color name="colorWhiteGray">#999999</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteWhiteGray">#EEEEEE</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorSkyBlue">#4793FC</color>
 </resources>

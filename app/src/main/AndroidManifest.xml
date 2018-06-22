@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".FindHouseMain">
+        <activity android:name=".PublishFindRoomActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".FindRoomDetail" />
         <activity android:name=".RentRoomDetail" />
-        <activity android:name=".PublishFindRoomActivity" />
+        <activity android:name=".FindHouseMain" />
         <activity android:name=".PublishRentRoomActivity" />
         <activity android:name=".Login" />
         <activity android:name=".Splash"></activity>
