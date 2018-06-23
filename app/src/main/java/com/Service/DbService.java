@@ -13,7 +13,7 @@ import rx.Observable;
 
 public interface DbService {
     @GET("room/getRoomList")
-    Observable<List<Room>> getRoomList();
+    Observable<List<Room>> getRoomList(@Query("subject") int subject);
 
 
     @POST("user/login")
@@ -22,4 +22,8 @@ public interface DbService {
 
     @GET("room/getRoomByRoomId")
     Observable<Room> getRoombyRoomId(@Query("roomId") int i);
+
+    @POST("room/addNewRoom")
+    Observable<Boolean> addRoom(@Query("publishTime") int publishTime,@Query("location") String location,@Query("rentWay") int rentway,@Query("subject") int subject,
+                                     @Query("rtx") String rtx,@Query("money") int money,@Query("deadline") int deadline,@Query("description") String description);
 }
