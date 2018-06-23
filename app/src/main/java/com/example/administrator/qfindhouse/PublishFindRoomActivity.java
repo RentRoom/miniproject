@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.app.DatePickerDialog;
+import android.view.MotionEvent;
+import android.widget.DatePicker;
+import java.util.Calendar;
 
 public class PublishFindRoomActivity extends AppCompatActivity {
     private Button headerBack,publishFindRoomButton,wholeButton,partButton;
@@ -73,8 +77,39 @@ public class PublishFindRoomActivity extends AppCompatActivity {
                 }
             }
         });
+        liveTime.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    showDatePickDlg();
+                    return true;
+                    }
+                    return false;
+
+            }
+        });
+        liveTime.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                if (b) {
+                    showDatePickDlg();
+                    }
+            }
+        });
     }
-    private void publish(){
+
+    protected void showDatePickDlg() {
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(PublishFindRoomActivity.this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                PublishFindRoomActivity.this.liveTime.setText(year + "年" + monthOfYear + "月" + dayOfMonth + "日");
+            }
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+        private void publish(){
         budget_begin=Integer.parseInt(budgetBegin.getText().toString());
         budget_end=Integer.parseInt(budgetEnd.getText().toString());
         live_time=Long.parseLong(liveTime.getText().toString());
