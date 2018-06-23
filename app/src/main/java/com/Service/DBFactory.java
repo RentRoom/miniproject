@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DBFactory
 {
-    final public static String BASE_URL = "http://203.195.224.226:8081/Qshelter/";
+    final public static String BASE_URL = "http://203.195.224.226:8080/miniproject/";
 
     /**
      * 创建OkHttp实例
