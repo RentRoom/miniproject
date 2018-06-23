@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="0dp"
+        android:background="@color/colorWhite"
         >
         <Button
             android:id="@+id/rent_room_detail_back"
@@ -23,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="详情"
+            android:text="房源详情"
             android:textSize="20dp"
             android:textColor="@color/colorBlack"
             android:layout_marginTop="10dp"
@@ -40,194 +41,374 @@
         android:layout_marginTop="0dp"
         />
     <RelativeLayout
-        android:id="@+id/rentroom_detail_main"
+        android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:layout_below="@id/rent_room_detail_header"
-        android:background="@color/colorWhiteWhiteGray"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/relativelayout_shape"
         >
         <TextView
-            android:id="@+id/rent_room_detail_location"
-            android:layout_width="wrap_content"
-
+            android:id="@+id/location_icon"
+            android:layout_width="25dp"
             android:layout_height="25dp"
-            android:minWidth="40dp"
-            android:maxWidth="100dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
-            android:textSize="20dp"
-            android:textColor="@color/colorBlack"
-            android:text="出售位置"
-            />
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="25dp"
-            android:orientation="horizontal"
-            android:layout_alignBottom="@id/rent_room_detail_location"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="18dp"
-            >
-            <!--<TextView-->
-                <!--android:id="@+id/price_tag"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="25dp"-->
-                <!--android:text="价格："-->
-                <!--android:textColor="@color/colorBlack"-->
-                <!--android:layout_alignBottom="@id/room_location_name"-->
-                <!--android:textSize="20dp"-->
-
-                <!--/>-->
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            >
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                android:text="111"
-                android:textColor="@color/colorBlack"
-                android:layout_alignBottom="@id/room_location_name"
-                android:textSize="20dp"
-                android:layout_marginLeft="25dp"
-                android:layout_gravity="right"
-                android:layout_weight="1"
-                />
-        </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-
-                    android:text=" / 月"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="20dp"
-                    android:layout_gravity="left"
-                    />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/subTag_container"
-            android:layout_width="wrap_content"
-            android:minWidth="100dp"
-
-            android:layout_height="15dp"
-            android:orientation="horizontal"
-            android:layout_alignStart="@id/rent_room_detail_location"
-            android:layout_below="@id/rent_room_detail_location"
-            android:layout_marginTop="5dp"
-
-            >
-            <TextView
-                android:id="@+id/live_right_now"
-                android:layout_width="wrap_content"
-                android:layout_height="15dp"
-                android:textColor="@color/colorGray"
-                android:text="立即入住"
-                />
-            <TextView
-                android:id="@+id/rent_type"
-                android:layout_width="wrap_content"
-                android:layout_height="15dp"
-                android:text="整租/合租"
-                android:layout_marginLeft="10dp"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/description_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/subTag_container"
             android:layout_marginTop="10dp"
-            android:layout_alignStart="@id/subTag_container"
-            >
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:text="描述："
-                android:textSize="18dp"
-                android:textColor="@color/colorDarkGray"
-                android:textStyle="bold"
-                />
-            <TextView
-                android:id="@+id/rent_room_detail_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="aaaaaa"
-                android:textSize="15dp"
-                />
-        </LinearLayout>
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/user_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@color/colorWhite"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/description_container"
-
+            android:background="@drawable/ic_location_on_black_24dp"
             />
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_toRightOf="@id/user_icon"
+            android:layout_toRightOf="@id/location_icon"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_alignBottom="@id/location_icon"
             android:textSize="20dp"
             android:textColor="@color/colorBlack"
-            android:text="GUODONGPENG"
-            android:layout_below="@id/description_container"
+            android:text="南山区星海名城花园4期9栋5楼"
             />
-        <android.support.v4.view.ViewPager
-            android:id="@+id/rent_room_detail_image_viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/user_icon"
-            android:layout_marginTop="20dp"
-            android:layout_margin="15dp"
-            android:background="@color/colorWhite"
-            ></android.support.v4.view.ViewPager>
+        <TextView
+            android:id="@+id/location_attach_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/location_icon"
+            android:layout_alignLeft="@id/location_icon"
+            android:layout_marginTop="10dp"
+            android:text="距离万利达大厦2公里"
+            />
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayout1"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/relativelayout_shape"
+        >
+        <LinearLayout
+            android:id="@+id/price_container"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignBottom="@id/room_location_name"
+            >
+            <TextView
+                android:id="@+id/price_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="价格："
+                android:textColor="@color/colorSkyBlue"
+                android:textSize="20dp"
+
+                />
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="111"
+                android:textColor="@color/colorSkyBlue"
+                android:layout_alignBottom="@id/room_location_name"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text=" / 月"
+                android:textColor="@color/colorSkyBlue"
+                android:textSize="20dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/find_room_detail_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/price_container"
+            android:layout_alignParentRight="true"
+            android:text="2018-06-16"
+            android:layout_marginRight="10dp"
+            />
+        <LinearLayout
+            android:id="@+id/subTag_container"
+            android:layout_width="wrap_content"
+            android:minWidth="100dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/price_container"
+            >
+            <TextView
+                android:id="@+id/live_right_now"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:textColor="@color/colorSkyBlue"
+                android:text=" 立即入住 "
+                android:textSize="15dp"
+                android:background="@drawable/tag_shape"
+                />
+
+            <TextView
+                android:id="@+id/rent_type"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text=" 整租/合租 "
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorSkyBlue"
+                android:textSize="15dp"
+                android:background="@drawable/tag_shape"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/rent_room_detail_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/subTag_container"
+            android:text="环境优美空气新鲜"
+            android:textSize="15dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relativeLayout2"
+        android:paddingTop="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/relativelayout_shape"
+        >
+        <ImageView
+            android:layout_width="320dp"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@color/colorSkyBlue"
+            />
+    </RelativeLayout>
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/rentroom_detail_main"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="50dp"-->
+        <!--android:layout_below="@id/rent_room_detail_header"-->
+        <!--android:background="@color/colorWhiteWhiteGray"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:id="@+id/rent_room_detail_location"-->
+            <!--android:layout_width="wrap_content"-->
+
+            <!--android:layout_height="25dp"-->
+            <!--android:minWidth="40dp"-->
+            <!--android:maxWidth="100dp"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:textSize="20dp"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:text="出售位置"-->
+            <!--/>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_alignBottom="@id/rent_room_detail_location"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginRight="18dp"-->
+            <!--&gt;-->
+            <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/price_tag"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="25dp"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:text="价格："&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textColor="@color/colorBlack"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_alignBottom="@id/room_location_name"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:textSize="20dp"&ndash;&gt;-->
+
+                <!--&lt;!&ndash;/>&ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--&gt;-->
+            <!--<TextView-->
+                <!--android:id="@+id/price"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="25dp"-->
+                <!--android:text="111"-->
+                <!--android:textColor="@color/colorBlack"-->
+                <!--android:layout_alignBottom="@id/room_location_name"-->
+                <!--android:textSize="20dp"-->
+                <!--android:layout_marginLeft="25dp"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_weight="1"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--&gt;-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="25dp"-->
+
+                    <!--android:text=" / 月"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="20dp"-->
+                    <!--android:layout_gravity="left"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/subTag_container"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:minWidth="100dp"-->
+
+            <!--android:layout_height="15dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_alignStart="@id/rent_room_detail_location"-->
+            <!--android:layout_below="@id/rent_room_detail_location"-->
+            <!--android:layout_marginTop="5dp"-->
+
+            <!--&gt;-->
+            <!--<TextView-->
+                <!--android:id="@+id/live_right_now"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:textColor="@color/colorGray"-->
+                <!--android:text="立即入住"-->
+                <!--/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/rent_type"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:text="整租/合租"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/description_container"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_below="@id/subTag_container"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_alignStart="@id/subTag_container"-->
+            <!--&gt;-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="24dp"-->
+                <!--android:text="描述："-->
+                <!--android:textSize="18dp"-->
+                <!--android:textColor="@color/colorDarkGray"-->
+                <!--android:textStyle="bold"-->
+                <!--/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/rent_room_detail_description"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="aaaaaa"-->
+                <!--android:textSize="15dp"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/user_icon"-->
+            <!--android:layout_width="50dp"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:src="@color/colorWhite"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_below="@id/description_container"-->
+
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:id="@+id/user_name"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:layout_toRightOf="@id/user_icon"-->
+            <!--android:layout_marginLeft="20dp"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:textSize="20dp"-->
+            <!--android:textColor="@color/colorBlack"-->
+            <!--android:text="GUODONGPENG"-->
+            <!--android:layout_below="@id/description_container"-->
+            <!--/>-->
+        <!--<android.support.v4.view.ViewPager-->
+            <!--android:id="@+id/rent_room_detail_image_viewPager"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@id/user_icon"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_margin="15dp"-->
+            <!--android:background="@color/colorWhite"-->
+            <!--&gt;</android.support.v4.view.ViewPager>-->
+    <!--</RelativeLayout>-->
     <LinearLayout
         android:id="@+id/rent_room_detail_footer"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
         >
-        <TextView
-            android:id="@+id/rent_room_detail_collect"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_weight="1"
-            android:textColor="@color/colorDarkGray"
-            android:text="收藏"
-            android:layout_gravity="center_vertical"
-            android:textAlignment="center"
-            android:textSize="15dp"
-            />
+            >
+            <TextView
+                android:id="@+id/rent_room_star"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_star_border_black_24dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                />
+            <TextView
+                android:id="@+id/rent_room_detail_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/colorWhiteGray"
+                android:text="收藏"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textSize="15dp"
+                />
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/rent_room_detail_contact"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:background="@drawable/send_message_style"
+            android:layout_weight="3"
+            android:background="@drawable/contact_shape"
             android:layout_margin="6dp"
-            android:textSize="15dp"
+            android:textSize="20dp"
             android:text="私信联系"
-            android:textColor="@color/colorDarkGray"
+            android:textColor="@color/colorWhite"
             />
     </LinearLayout>
 </RelativeLayout>

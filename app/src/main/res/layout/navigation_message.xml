@@ -9,23 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="0dp"
-        android:background="@color/colorWhite"
+        android:background="@color/colorSkyBlue"
         >
-        <!--<Button-->
-            <!--android:id="@+id/message_back"-->
-            <!--android:layout_width="25dp"-->
-            <!--android:layout_height="25dp"-->
-            <!--android:layout_marginStart="10dp"-->
-            <!--android:background="@drawable/ic_arrow_back_black_24dp"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--/>-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="消息"
             android:textSize="20dp"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorWhite"
             android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
 
@@ -39,78 +30,91 @@
         android:background="@color/colorDarkGray"
         android:layout_marginTop="0dp"
         />
-    <LinearLayout
-        android:id="@+id/message_detail_container"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/message_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/colorWhite"
-        android:layout_below="@id/message_header"
+        android:layout_below="@id/line"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorWhite"
+
         >
-        <LinearLayout
-            android:id="@+id/collection_container"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
 
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="我的收藏"
-                />
+    </android.support.v7.widget.RecyclerView>
+    <!--<LinearLayout-->
+        <!--android:id="@+id/message_detail_container"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--android:background="@color/colorWhite"-->
+        <!--android:layout_below="@id/message_header"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--&gt;-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/collection_container"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/colorDarkGray"-->
+                <!--android:textSize="25dp"-->
 
-        </LinearLayout>
-        <TextView
-            android:id="@id/line"
-            android:layout_width="match_parent"
-            android:layout_height="0.8dp"
-            android:background="@color/colorWhiteWhiteGray"
-            />
-        <LinearLayout
-            android:id="@+id/room_source_container"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:text="我的收藏"-->
+                <!--/>-->
 
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="我的房源"
-                />
+        <!--</LinearLayout>-->
+        <!--<TextView-->
+            <!--android:id="@id/line"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.8dp"-->
+            <!--android:background="@color/colorWhiteWhiteGray"-->
+            <!--/>-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/room_source_container"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/colorDarkGray"-->
+                <!--android:textSize="25dp"-->
 
-        </LinearLayout>
-        <TextView
-            android:id="@id/line"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/colorWhiteWhiteGray"
-            />
-        <LinearLayout
-            android:id="@+id/find_room_message_container"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:text="我的房源"-->
+                <!--/>-->
 
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="我的求租信息"
-                />
+        <!--</LinearLayout>-->
+        <!--<TextView-->
+            <!--android:id="@id/line"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0.5dp"-->
+            <!--android:background="@color/colorWhiteWhiteGray"-->
+            <!--/>-->
+        <!--<LinearLayout-->
+            <!--android:id="@+id/find_room_message_container"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp">-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/colorDarkGray"-->
+                <!--android:textSize="25dp"-->
 
-        </LinearLayout>
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:text="我的求租信息"-->
+                <!--/>-->
 
-    </LinearLayout>
+        <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
 </RelativeLayout>

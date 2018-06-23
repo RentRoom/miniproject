@@ -4,31 +4,89 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorSkyBlue"
+        android:paddingBottom="20dp"
+        android:id="@+id/relativeLayout">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            app:tabBackground="@color/colorSkyBlue"
+            android:paddingBottom="5dp"
+            app:tabTextColor="@color/colorWhite"
+            app:tabSelectedTextColor="@color/colorWhite"
+            app:tabIndicatorColor="@color/colorWhite"
+            >
+            <android.support.design.widget.TabItem
+                android:id="@+id/rent_tab_item"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:textAlignment="center"
+                android:text="房源"
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        android:layout_centerHorizontal="true"
-        app:tabBackground="@color/colorWhite"
-        android:paddingBottom="5dp"
-        >
-        <android.support.design.widget.TabItem
-            android:id="@+id/rent_tab_item"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:textAlignment="center"
-            android:text="出租"
-            />
-        <android.support.design.widget.TabItem
-            android:id="@+id/find_tab_item"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:text="求租"
-            android:textAlignment="center"
 
-            />
-    </android.support.design.widget.TabLayout>
+                />
+            <android.support.design.widget.TabItem
+                android:id="@+id/find_tab_item"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:text="求租"
+                android:textAlignment="center"
+
+
+                />
+        </android.support.design.widget.TabLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal"
+            android:layout_below="@id/tab_layout"
+            android:layout_marginTop="10dp"
+            >
+            <android.support.v7.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:background="@drawable/search_shape"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="9"
+                >
+            </android.support.v7.widget.SearchView>
+            <LinearLayout
+                android:id="@+id/filter_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                >
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:text="筛选"
+                    android:textColor="@color/colorWhite"
+                    android:background="#00000000"
+                    android:layout_gravity="center_vertical"
+                    />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignBottom="@+id/relativeLayout"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
 
     <!--<LinearLayout-->
         <!--android:id="@+id/buttons_container"-->
@@ -62,26 +120,7 @@
             <!--/>-->
 
     <!--</LinearLayout>-->
-    <android.support.v7.widget.SearchView
 
-        android:id="@+id/search_view"
-        android:layout_width="300dp"
-        android:layout_height="35dp"
-        android:layout_below="@id/tab_layout"
-        android:background="@drawable/search_shape"
-        android:layout_centerHorizontal="true"
-
-        >
-
-    </android.support.v7.widget.SearchView>
-    <TextView
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/colorDarkGray"
-        android:layout_below="@id/search_view"
-        android:layout_marginTop="10dp"
-        />
     <android.support.v4.view.ViewPager
         android:id="@+id/home_cur_pager"
         android:layout_width="match_parent"
@@ -90,6 +129,22 @@
         >
 
     </android.support.v4.view.ViewPager>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorSkyBlue"
+
+        android:src="@drawable/ic_add_black_24dp"
+        app:fabSize="mini"
+        android:layout_above="@id/navigation"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+
+        />
 
 
 

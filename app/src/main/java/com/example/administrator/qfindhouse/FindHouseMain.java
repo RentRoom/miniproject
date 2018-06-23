@@ -2,6 +2,7 @@ package com.example.administrator.qfindhouse;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.icu.text.UnicodeSetSpanner;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabItem;
@@ -17,6 +18,7 @@ import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -82,6 +84,8 @@ public class FindHouseMain extends AppCompatActivity {
         initViewPager();
 
         showHome();
+
+
     }
 
     void initFragmentManager()
@@ -98,7 +102,7 @@ public class FindHouseMain extends AppCompatActivity {
                 new int[]{android.R.attr.state_checked}
         };
         int[] colors = new int[]{ContextCompat.getColor(this, R.color.colorWhiteGray),
-                ContextCompat.getColor(this, R.color.colorBlack)};
+                ContextCompat.getColor(this, R.color.colorSkyBlue)};
         BottomNavigationViewEx navigation = (BottomNavigationViewEx) findViewById(R.id.navigation);
         navigation.enableAnimation(true);
         navigation.enableShiftingMode(false);
@@ -144,6 +148,7 @@ public class FindHouseMain extends AppCompatActivity {
         if(messageFragment != null) fragmentTransaction.hide(messageFragment);
         if(settingFragment != null) fragmentTransaction.hide(settingFragment);
         homeFragment = new HomeFragment();
+
         fragmentTransaction.add(R.id.cur_frameLayout, homeFragment);
         fragmentTransaction.commit();
     }
