@@ -11,13 +11,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+//import com.tencent.tencentmap.mapsdk.maps.TencentMap;
+
+//
+//地图API需要更改其他文件添加依赖
+// 参考：http://lbs.qq.com/android_v1/guide-project-setup.html
+//
 public class PublishRentRoomActivity extends AppCompatActivity {
     //both pages
     private Button headerBack,publishRentRoomButtonNext;
     //page1
     private EditText needEdit,publishRentRoomLocation;
     private ImageView addImage;
+    private Button setLocationButton;
     //page2
     private EditText budgetBegin,budgetEnd,liveTime;
     private Button publishRentRoomButton,wholeButton,partButton;
@@ -78,6 +86,12 @@ public class PublishRentRoomActivity extends AppCompatActivity {
 
             }
         });
+        setLocationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //add
+            }
+        });
     }
     private void addListener2(){
         headerBack.setOnClickListener(new View.OnClickListener() {
@@ -89,9 +103,13 @@ public class PublishRentRoomActivity extends AppCompatActivity {
         publishRentRoomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                publish();
-                Intent intent=new Intent(PublishRentRoomActivity.this,FindHouseMain.class);
-                startActivity(intent);
+                try {
+                    publish();
+                    Intent intent=new Intent(PublishRentRoomActivity.this,FindHouseMain.class);
+                    startActivity(intent);
+                }catch(Exception e){
+                    Toast.makeText(PublishRentRoomActivity.this,"please fill in the blanks",Toast.LENGTH_SHORT).show();
+                }
             }
         });
         wholeButton.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +148,11 @@ public class PublishRentRoomActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                budget_begin=Integer.parseInt(budgetBegin.getText().toString());
+                try {
+                    budget_begin = Integer.parseInt(budgetBegin.getText().toString());
+                }catch (Exception e){
+                    ;
+                }
             }
 
             @Override
@@ -146,7 +168,11 @@ public class PublishRentRoomActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                budget_end=Integer.parseInt(budgetEnd.getText().toString());
+                try {
+                    budget_end = Integer.parseInt(budgetEnd.getText().toString());
+                }catch(Exception e){
+                    ;
+                }
             }
 
             @Override
@@ -162,7 +188,11 @@ public class PublishRentRoomActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                live_time=Long.parseLong(liveTime.getText().toString());
+                try {
+                    live_time = Long.parseLong(liveTime.getText().toString());
+                }catch (Exception e){
+                    ;
+                }
             }
 
             @Override
@@ -187,6 +217,7 @@ public class PublishRentRoomActivity extends AppCompatActivity {
         addImage=findViewById(R.id.add_image);
         publishRentRoomButtonNext=findViewById(R.id.publish_rent_room_button_next);
         publishRentRoomLocation=findViewById(R.id.publish_rent_room_location);
+        setLocationButton=findViewById(R.id.set_location_button);
         //restore var
         needEdit.setText(need_edit);
         publishRentRoomLocation.setText(publish_rent_room_location);
@@ -202,20 +233,20 @@ public class PublishRentRoomActivity extends AppCompatActivity {
         budgetEnd=findViewById(R.id.budget_end);
         liveTime=findViewById(R.id.live_time);
         //restore var
-        budgetBegin.setText(String.valueOf(budget_begin));
-        budgetEnd.setText(String.valueOf(budget_end));
-        liveTime.setText(String.valueOf(live_time));
-        if(whole_bool){
-            wholeButton.setBackgroundColor(Color.BLACK);
-        }
-        if(part_bool){
-            partButton.setBackgroundColor(Color.BLACK);
-        }
+        //budgetBegin.setText(String.valueOf(budget_begin));
+        //budgetEnd.setText(String.valueOf(budget_end));
+        //liveTime.setText(String.valueOf(live_time));
+        //if(whole_bool){
+        //    wholeButton.setBackgroundColor(Color.BLACK);
+        //}
+        //if(part_bool){
+        //    partButton.setBackgroundColor(Color.BLACK);
+        //}
         addListener2();
     }
     private void publish(){
-        budget_begin=Integer.parseInt(budgetBegin.getText().toString());
-        budget_end=Integer.parseInt(budgetEnd.getText().toString());
-        live_time=Long.parseLong(liveTime.getText().toString());
+        budget_begin = Integer.parseInt(budgetBegin.getText().toString());
+        budget_end = Integer.parseInt(budgetEnd.getText().toString());
+        live_time = Long.parseLong(liveTime.getText().toString());
     }
 }

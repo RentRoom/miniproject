@@ -12,14 +12,16 @@
         android:id="@+id/relativeLayout">
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="45dp"
-            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
             app:tabBackground="@color/colorSkyBlue"
             android:paddingBottom="5dp"
             app:tabTextColor="@color/colorWhite"
             app:tabSelectedTextColor="@color/colorWhite"
             app:tabIndicatorColor="@color/colorWhite"
+
+
             >
             <android.support.design.widget.TabItem
                 android:id="@+id/rent_tab_item"
@@ -125,7 +127,8 @@
         android:id="@+id/home_cur_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/line"
+        android:layout_below="@id/relativeLayout"
+        android:background="@color/colorWhiteWhiteGray"
         >
 
     </android.support.v4.view.ViewPager>

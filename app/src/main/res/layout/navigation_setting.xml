@@ -6,7 +6,7 @@
     <RelativeLayout
         android:id="@+id/setting_header"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:background="@color/colorSkyBlue"
         >
@@ -15,11 +15,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我的"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-
+            android:layout_marginLeft="10dp"
             />
     </RelativeLayout>
 
@@ -34,19 +33,19 @@
         >
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/setting_user_icon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
 
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:src="@color/colorWhiteGray"
+            android:src="@color/colorWhiteWhiteGray"
             />
         <TextView
             android:id="@+id/setting_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:layout_alignTop="@id/setting_user_icon"
             android:text="名字"
             android:layout_toRightOf="@id/setting_user_icon"

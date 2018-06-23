@@ -9,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.ParseException;
+
 public class Login extends AppCompatActivity {
 
     EditText loginName;
@@ -21,8 +23,11 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Permission.verifyStoragePermissions(this);
         init();
         setLoginButton();
+
+
     }
     void init()
     {

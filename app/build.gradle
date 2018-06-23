@@ -34,6 +34,8 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-        implementation 'com.github.Jay-Goo:RangeSeekBar:v2.0.2'
+    implementation 'com.github.Jay-Goo:RangeSeekBar:v2.0.2'
+    compile 'com.ycl.utils:ycllibrary:1.1'
+
 
 }

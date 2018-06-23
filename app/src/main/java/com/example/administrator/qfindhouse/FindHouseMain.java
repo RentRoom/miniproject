@@ -79,11 +79,8 @@ public class FindHouseMain extends AppCompatActivity {
     {
         initFragmentManager();
         initNavigationBottom();
-        initView();
         showHome();
-        initViewPager();
 
-        showHome();
 
 
     }
@@ -113,30 +110,6 @@ public class FindHouseMain extends AppCompatActivity {
         navigation.setItemIconTintList(csl);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-    }
-
-    void initViewPager()
-    {
-        inflater = getLayoutInflater();//.from(homeFragment.getContext());
-        homeFindHouseView = inflater.inflate(R.layout.home_page_find_home,null);
-        homeRentHouseView = inflater.inflate(R.layout.home_page_rent_home,null);
-        navigationHomeView=inflater.inflate(R.layout.navigation_home,null);
-
-        pageList = new ArrayList<>();
-        pageList.add(homeFindHouseView);
-        pageList.add(homeRentHouseView);
-
-        viewPagerAdapter = new ViewPagerAdapter(pageList);
-        viewPager = (ViewPager) navigationHomeView.findViewById(R.id.home_cur_pager);
-        //viewPager = (ViewPager) findViewById(R.id.home_cur_pager);
-        viewPager.setAdapter(viewPagerAdapter);
-        viewPager.setCurrentItem(0);
-    }
-    void initView()
-    {
-        homeTabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        rentHouseItem = (TabItem) findViewById(R.id.rent_tab_item);
-        findHouseItem = (TabItem) findViewById(R.id.find_tab_item);
     }
 
     void showHome()

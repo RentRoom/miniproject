@@ -112,7 +112,7 @@ public class PublishFindRoomActivity extends AppCompatActivity {
         private void publish(){
         budget_begin=Integer.parseInt(budgetBegin.getText().toString());
         budget_end=Integer.parseInt(budgetEnd.getText().toString());
-        live_time=Long.parseLong(liveTime.getText().toString());
+        //live_time=Long.parseLong(liveTime.getText().toString());
         need_edit=needEdit.getText().toString();
     }
 }
