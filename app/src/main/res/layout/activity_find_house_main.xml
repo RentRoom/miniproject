@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="5dp"
+    android:fitsSystemWindows="true"
     tools:context="com.example.administrator.qfindhouse.FindHouseMain">
 
     <FrameLayout
@@ -32,20 +32,7 @@
 
     <!--</android.support.v4.view.ViewPager>-->
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/colorWhiteWhiteGray"
 
-        android:src="@drawable/ic_add_black_24dp"
-        app:fabSize="mini"
-        android:layout_above="@id/navigation"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="20dp"
-
-        />
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:id="@+id/navigation"
         android:layout_width="match_parent"

@@ -102,10 +102,11 @@
         android:layout_alignStart="@id/login_user_pass_container"
         android:layout_alignEnd="@id/login_user_pass_container"
         android:layout_marginTop="50dp"
-        android:background="@drawable/send_message_style"
-        android:textColor="@color/colorDarkGray"
+        android:background="@drawable/contact_shape"
+        android:textColor="@color/colorWhite"
         android:textSize="30dp"
         android:text="登录"
+
         />
     <TextView
         android:id="@+id/privacy_policy"
@@ -130,9 +131,8 @@
             android:id="@+id/is_checked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
-
+            android:checked="true"
+            android:theme="@style/My_CheckBox"
             />
         <TextView
             android:layout_width="wrap_content"

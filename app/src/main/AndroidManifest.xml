@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".PublishFindRoomActivity">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +20,15 @@
         <activity android:name=".FindRoomDetail" />
         <activity android:name=".RentRoomDetail" />
         <activity android:name=".FindHouseMain" />
+        <activity android:name=".PublishFindRoomActivity" />
         <activity android:name=".PublishRentRoomActivity" />
-        <activity android:name=".Login" />
+        <activity android:name="com.ycl.chooseavatar.library.CropImageViewActivity"></activity>
+
         <activity android:name=".Splash"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 访问网络的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

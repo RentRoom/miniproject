@@ -6,66 +6,61 @@
     <RelativeLayout
         android:id="@+id/setting_header"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:background="@color/colorWhite"
+        android:background="@color/colorSkyBlue"
         >
-        <!--<Button-->
-            <!--android:id="@+id/find_room_detail_back"-->
-            <!--android:layout_width="25dp"-->
-            <!--android:layout_height="25dp"-->
-            <!--android:layout_marginStart="10dp"-->
-            <!--android:background="@drawable/ic_arrow_back_black_24dp"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--/>-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="我的"
-            android:textSize="20dp"
-            android:textColor="@color/colorBlack"
+            android:textSize="25dp"
+            android:textColor="@color/colorWhite"
             android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
-
+            android:layout_marginLeft="10dp"
             />
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/line"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_below="@id/setting_header"
-        android:background="@color/colorDarkGray"
-        android:layout_marginTop="0dp"
-        />
+
     <RelativeLayout
         android:id="@+id/icon_name_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/line"
-        android:background="@color/colorWhite"
+        android:layout_below="@id/setting_header"
+        android:background="@color/colorSkyBlue"
         android:paddingBottom="20dp"
         >
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/setting_user_icon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
 
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:src="@color/colorDarkGray"
+            android:src="@color/colorWhiteWhiteGray"
             />
         <TextView
             android:id="@+id/setting_user_name"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textSize="25dp"
-            android:layout_below="@id/setting_user_icon"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_alignTop="@id/setting_user_icon"
             android:text="名字"
-            android:layout_centerHorizontal="true"
+            android:layout_toRightOf="@id/setting_user_icon"
             android:layout_marginTop="10dp"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_chevron_right_black_24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
             />
     </RelativeLayout>
 
@@ -74,9 +69,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/colorWhite"
+        android:background="@drawable/relativelayout_shape"
         android:layout_below="@id/icon_name_container"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         >
         <LinearLayout
             android:id="@+id/collection_container"
@@ -87,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
+                android:textSize="20dp"
 
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
@@ -110,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
+                android:textSize="20dp"
 
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
@@ -133,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="25dp"
+                android:textSize="20dp"
 
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
@@ -143,16 +140,70 @@
         </LinearLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/setting_detail2_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/relativelayout_shape"
+        android:layout_below="@id/setting_detail_container"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+        <LinearLayout
+            android:id="@+id/custom_service_container"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="20dp"
+
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="客服"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@id/line"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/colorWhiteWhiteGray"
+            />
+        <LinearLayout
+            android:id="@+id/setting_setting_container"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="20dp"
+
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="设置"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
     <Button
         android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/logout_shape"
+        android:background="@drawable/contact_shape"
         android:layout_marginBottom="10dp"
         android:textSize="25dp"
-        android:textColor="@color/colorDarkGray"
+        android:textColor="@color/colorWhite"
         android:text="退出登录"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"

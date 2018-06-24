@@ -2,6 +2,7 @@ package com.example.administrator.qfindhouse;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.icu.text.UnicodeSetSpanner;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabItem;
@@ -17,6 +18,7 @@ import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -33,11 +35,11 @@ public class FindHouseMain extends AppCompatActivity {
     private ViewPager viewPager;
     private LayoutInflater inflater;
 
-    private RecyclerView homeFindHouseRecyclerView, homeRentHouseRecyclerView;
-    private SearchView homeSearchView;
-    private TabLayout homeTabLayout;
-    private TabItem rentHouseItem,findHouseItem;
-    private FloatingActionButton publishMessage;
+//    private RecyclerView homeFindHouseRecyclerView, homeRentHouseRecyclerView;
+//    private SearchView homeSearchView;
+//    private TabLayout homeTabLayout;
+//    private TabItem rentHouseItem,findHouseItem;
+//    private FloatingActionButton publishMessage;
 
 
     private FragmentTransaction fragmentTransaction;//fragment事务
@@ -45,6 +47,7 @@ public class FindHouseMain extends AppCompatActivity {
     private HomeFragment homeFragment;
     private MessageFragment messageFragment;
     private SettingFragment settingFragment;
+
     private BottomNavigationViewEx.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationViewEx.OnNavigationItemSelectedListener() {
         @Override
@@ -77,11 +80,10 @@ public class FindHouseMain extends AppCompatActivity {
     {
         initFragmentManager();
         initNavigationBottom();
-        initView();
         showHome();
-        initViewPager();
 
-        showHome();
+
+
     }
 
     void initFragmentManager()
@@ -98,7 +100,7 @@ public class FindHouseMain extends AppCompatActivity {
                 new int[]{android.R.attr.state_checked}
         };
         int[] colors = new int[]{ContextCompat.getColor(this, R.color.colorWhiteGray),
-                ContextCompat.getColor(this, R.color.colorBlack)};
+                ContextCompat.getColor(this, R.color.colorSkyBlue)};
         BottomNavigationViewEx navigation = (BottomNavigationViewEx) findViewById(R.id.navigation);
         navigation.enableAnimation(true);
         navigation.enableShiftingMode(false);
@@ -111,30 +113,6 @@ public class FindHouseMain extends AppCompatActivity {
 
     }
 
-    void initViewPager()
-    {
-        inflater = getLayoutInflater();//.from(homeFragment.getContext());
-        homeFindHouseView = inflater.inflate(R.layout.home_page_find_home,null);
-        homeRentHouseView = inflater.inflate(R.layout.home_page_rent_home,null);
-        navigationHomeView=inflater.inflate(R.layout.navigation_home,null);
-
-        pageList = new ArrayList<>();
-        pageList.add(homeFindHouseView);
-        pageList.add(homeRentHouseView);
-
-        viewPagerAdapter = new ViewPagerAdapter(pageList);
-        viewPager = (ViewPager) navigationHomeView.findViewById(R.id.home_cur_pager);
-        //viewPager = (ViewPager) findViewById(R.id.home_cur_pager);
-        viewPager.setAdapter(viewPagerAdapter);
-        viewPager.setCurrentItem(0);
-    }
-    void initView()
-    {
-        homeTabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        rentHouseItem = (TabItem) findViewById(R.id.rent_tab_item);
-        findHouseItem = (TabItem) findViewById(R.id.find_tab_item);
-    }
-
     void showHome()
     {
         //FragmentManager manager = getSupportFragmentManager();
@@ -143,8 +121,9 @@ public class FindHouseMain extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
         if(messageFragment != null) fragmentTransaction.hide(messageFragment);
         if(settingFragment != null) fragmentTransaction.hide(settingFragment);
-        homeFragment = new HomeFragment();
-        fragmentTransaction.add(R.id.cur_frameLayout, homeFragment);
+        if(homeFragment == null ) homeFragment = new HomeFragment();
+
+        fragmentTransaction.add(R.id.cur_frameLayout, homeFragment,"homeFragment");
         fragmentTransaction.commit();
     }
 
@@ -153,7 +132,7 @@ public class FindHouseMain extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
         if(homeFragment != null) fragmentTransaction.hide(homeFragment);
         if(settingFragment != null) fragmentTransaction.hide(settingFragment);
-        messageFragment = new MessageFragment();
+        if(messageFragment == null) messageFragment = new MessageFragment();
         fragmentTransaction.add(R.id.cur_frameLayout, messageFragment);
         fragmentTransaction.commit();
     }
@@ -163,8 +142,9 @@ public class FindHouseMain extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
         if(homeFragment != null) fragmentTransaction.hide(homeFragment);
         if(messageFragment != null) fragmentTransaction.hide(messageFragment);
-        settingFragment  = new SettingFragment();
+        if(settingFragment == null) settingFragment  = new SettingFragment();
         fragmentTransaction.add(R.id.cur_frameLayout, settingFragment);
         fragmentTransaction.commit();
     }
+
 }

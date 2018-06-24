@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.administrator.qfindhouse.PublishFindRoomActivity"
-    android:background="@color/colorWhiteWhiteGray"
-    >
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <include
-        android:id="@+id/publish_find_room_header"
+        android:id="@+id/publish_rent_room_header_next"
         layout="@layout/include_header_rent"/>
+
     <LinearLayout
         android:id="@+id/publish_find_room_top_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/publish_find_room_header"
-        android:background="@color/colorWhite"
+        android:layout_below="@id/publish_rent_room_header_next"
+        android:background="@drawable/relativelayout_shape"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:paddingBottom="20dp"
+
         >
         <LinearLayout
             android:id="@+id/publish_find_room_budget_container"
@@ -31,53 +28,55 @@
             <TextView
                 android:layout_width="65dp"
                 android:layout_height="wrap_content"
-                android:text="租金预算"
+                android:text="租金价格"
                 android:layout_gravity="center"
                 android:textSize="15dp"
                 android:textColor="@color/colorBlack"
                 android:layout_marginLeft="10dp"
                 />
             <EditText
-                android:id="@+id/find_room_budget"
-                android:layout_width="180dp"
+                android:id="@+id/budget_begin"
+                android:layout_width="60dp"
                 android:layout_height="35dp"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:background="@drawable/edit_shape"
                 android:textColor="@color/colorGray"
                 android:layout_marginLeft="10dp"
                 android:layout_gravity="center"
                 android:textAlignment="center"
-                android:hint="预算"
+                android:hint="最低价格"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="15dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                />
+            <EditText
+                android:id="@+id/budget_end"
+                android:layout_width="60dp"
+                android:layout_height="35dp"
+                android:textSize="15dp"
+                android:background="@drawable/edit_shape"
+                android:textColor="@color/colorGray"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:hint="最高价格"
                 android:layout_marginRight="10dp"
                 />
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="-"-->
-                <!--android:textSize="15dp"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--/>-->
-            <!--<EditText-->
-                <!--android:id="@+id/budget_end"-->
-                <!--android:layout_width="60dp"-->
-                <!--android:layout_height="35dp"-->
-                <!--android:textSize="15dp"-->
-                <!--android:background="@drawable/edit_shape"-->
-                <!--android:textColor="@color/colorGray"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:textAlignment="center"-->
-                <!--android:hint="最高价格"-->
-                <!--android:layout_marginRight="10dp"-->
-                <!--/>-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="元/月"
+                android:layout_gravity="center"
+
                 android:textSize="15dp"
                 android:textColor="@color/colorBlack"
-                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
                 />
         </LinearLayout>
         <TextView
@@ -112,7 +111,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_gravity="center"
                 android:textAlignment="center"
-                android:hint="最迟入住日期"
+                android:hint="最晚入住日期"
                 android:layout_marginRight="10dp"
                 />
 
@@ -162,52 +161,11 @@
                 />
         </LinearLayout>
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/publish_find_room_top_container"
-        android:background="@color/colorWhite"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:paddingBottom="20dp">
-        <TextView
-            android:id="@+id/need_text"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="租住需求"
-            android:textSize="15dp"
-            android:textColor="@color/colorBlack"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-
-            />
-        <EditText
-            android:id="@+id/need_edit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:background="@drawable/edit_shape"
-            android:hint="可以详细的描述你的租房需求哦：
-1 介绍自己，如兴趣，爱好
-2 描述自己的特殊需求，如养宠物，情侣入住等
-3 简单描述对房屋位置，装修，户型要求
-4 对室友有无性别要求，性格偏好"
-            android:inputType="textMultiLine"
-            android:layout_below="@id/need_text"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:gravity="top"
-            />
-    </RelativeLayout>
-
-
-
     <Button
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:id="@+id/publish_find_room_button"
+        android:id="@+id/publish_rent_room_button_finish"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -215,8 +173,6 @@
         android:textSize="20dp"
         android:textColor="@color/colorWhite"
         android:textAlignment="center"
-        android:background="@drawable/publish_shape"
+        android:background="@drawable/contact_shape"
         />
-
-
-    </RelativeLayout>
+</RelativeLayout>
