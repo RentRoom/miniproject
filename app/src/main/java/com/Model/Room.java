@@ -7,41 +7,43 @@ package com.Model;
 public class Room {
 
     /**
-     * roomId : 1
-     * publishTime : 3333
-     * location : 2222
-     * rentWay : 111
-     * subject : 1
-     * rtx : derry
-     * money : 3211
-     * deadline : 2131
-     * description : heklo
+     * deadline : 0
+     * description : string
+     * location : string
+     * money : 0
+     * publishTime : 0
+     * rentWay : 0
+     * roomId : 0
+     * roomUrl : string
+     * rtx : string
+     * subject : 0
      */
 
-    private int roomId;
-    private int publishTime;
-    private String location;
-    private int rentWay;
-    private int subject;
-    private String rtx;
-    private int money;
-    private int deadline;
+    private long deadline;
     private String description;
+    private String location;
+    private int money;
+    private long publishTime;
+    private int rentWay;
+    private int roomId;
+    private String roomUrl;
+    private String rtx;
+    private int subject;
 
-    public int getRoomId() {
-        return roomId;
+    public long getDeadline() {
+        return deadline;
     }
 
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
+    public void setDeadline(long deadline) {
+        this.deadline = deadline;
     }
 
-    public int getPublishTime() {
-        return publishTime;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPublishTime(int publishTime) {
-        this.publishTime = publishTime;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getLocation() {
@@ -52,6 +54,22 @@ public class Room {
         this.location = location;
     }
 
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public long getPublishTime() {
+        return publishTime;
+    }
+
+    public void setPublishTime(long publishTime) {
+        this.publishTime = publishTime;
+    }
+
     public int getRentWay() {
         return rentWay;
     }
@@ -60,12 +78,20 @@ public class Room {
         this.rentWay = rentWay;
     }
 
-    public int getSubject() {
-        return subject;
+    public int getRoomId() {
+        return roomId;
     }
 
-    public void setSubject(int subject) {
-        this.subject = subject;
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
+    }
+
+    public String getRoomUrl() {
+        return roomUrl;
+    }
+
+    public void setRoomUrl(String roomUrl) {
+        this.roomUrl = roomUrl;
     }
 
     public String getRtx() {
@@ -76,27 +102,11 @@ public class Room {
         this.rtx = rtx;
     }
 
-    public int getMoney() {
-        return money;
+    public int getSubject() {
+        return subject;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
-    public int getDeadline() {
-        return deadline;
-    }
-
-    public void setDeadline(int deadline) {
-        this.deadline = deadline;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setSubject(int subject) {
+        this.subject = subject;
     }
 }
