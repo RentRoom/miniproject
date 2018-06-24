@@ -2,6 +2,7 @@ package com.Service;
 
 import com.Model.Message;
 import com.Model.Room;
+import com.Model.User;
 
 import java.util.List;
 
@@ -15,6 +16,9 @@ import rx.Observable;
 public interface DbService {
     @GET("getRoomList")
     Observable<List<Room>> getRoomList(@Query("subject") int subject);
+
+    @GET("getUserByRtx")
+    Observable<User> getUserbyRtx(@Query("rtx") String rtx);
 
 
     @POST("login")
