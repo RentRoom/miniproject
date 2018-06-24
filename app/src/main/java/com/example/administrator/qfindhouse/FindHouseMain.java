@@ -35,11 +35,11 @@ public class FindHouseMain extends AppCompatActivity {
     private ViewPager viewPager;
     private LayoutInflater inflater;
 
-    private RecyclerView homeFindHouseRecyclerView, homeRentHouseRecyclerView;
-    private SearchView homeSearchView;
-    private TabLayout homeTabLayout;
-    private TabItem rentHouseItem,findHouseItem;
-    private FloatingActionButton publishMessage;
+//    private RecyclerView homeFindHouseRecyclerView, homeRentHouseRecyclerView;
+//    private SearchView homeSearchView;
+//    private TabLayout homeTabLayout;
+//    private TabItem rentHouseItem,findHouseItem;
+//    private FloatingActionButton publishMessage;
 
 
     private FragmentTransaction fragmentTransaction;//fragment事务
@@ -47,6 +47,7 @@ public class FindHouseMain extends AppCompatActivity {
     private HomeFragment homeFragment;
     private MessageFragment messageFragment;
     private SettingFragment settingFragment;
+
     private BottomNavigationViewEx.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationViewEx.OnNavigationItemSelectedListener() {
         @Override
@@ -120,9 +121,9 @@ public class FindHouseMain extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
         if(messageFragment != null) fragmentTransaction.hide(messageFragment);
         if(settingFragment != null) fragmentTransaction.hide(settingFragment);
-        homeFragment = new HomeFragment();
+        if(homeFragment == null ) homeFragment = new HomeFragment();
 
-        fragmentTransaction.add(R.id.cur_frameLayout, homeFragment);
+        fragmentTransaction.add(R.id.cur_frameLayout, homeFragment,"homeFragment");
         fragmentTransaction.commit();
     }
 
@@ -131,7 +132,7 @@ public class FindHouseMain extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
         if(homeFragment != null) fragmentTransaction.hide(homeFragment);
         if(settingFragment != null) fragmentTransaction.hide(settingFragment);
-        messageFragment = new MessageFragment();
+        if(messageFragment == null) messageFragment = new MessageFragment();
         fragmentTransaction.add(R.id.cur_frameLayout, messageFragment);
         fragmentTransaction.commit();
     }
@@ -141,8 +142,9 @@ public class FindHouseMain extends AppCompatActivity {
         fragmentTransaction = fragmentManager.beginTransaction();
         if(homeFragment != null) fragmentTransaction.hide(homeFragment);
         if(messageFragment != null) fragmentTransaction.hide(messageFragment);
-        settingFragment  = new SettingFragment();
+        if(settingFragment == null) settingFragment  = new SettingFragment();
         fragmentTransaction.add(R.id.cur_frameLayout, settingFragment);
         fragmentTransaction.commit();
     }
+
 }

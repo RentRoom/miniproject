@@ -59,6 +59,7 @@
                 >
             </android.support.v7.widget.SearchView>
             <LinearLayout
+
                 android:id="@+id/filter_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,6 +67,7 @@
                 android:layout_weight="1"
                 >
                 <Button
+                    android:id="@+id/filter_button"
                     android:layout_width="40dp"
                     android:layout_height="35dp"
                     android:text="筛选"
@@ -74,6 +76,7 @@
                     android:layout_gravity="center_vertical"
                     />
                 <ImageView
+                    android:id="@+id/arrow"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignBottom="@+id/relativeLayout"
@@ -123,15 +126,16 @@
 
     <!--</LinearLayout>-->
 
-    <android.support.v4.view.ViewPager
+    <com.example.administrator.qfindhouse.CustomViewPager
         android:id="@+id/home_cur_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/relativeLayout"
-        android:background="@color/colorWhiteWhiteGray"
-        >
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
 
-    </android.support.v4.view.ViewPager>
+        android:background="@color/colorWhiteWhiteGray">
+
+    </com.example.administrator.qfindhouse.CustomViewPager>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/add_message"
